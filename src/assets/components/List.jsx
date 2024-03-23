@@ -4,43 +4,37 @@ import ListItem from "./ListItem";
 import React, { useState } from "react";
 
 
-function List() {
+let itemId = 0;
+
+export function List() {
     const [items, setItems] = useState([]);
 
     const addItem = (inputText) => {
         console.log("added items: " + items);
-        setItems(prevItems => {
-            return [...prevItems, inputText]
-        });
+        const newItem = { id: itemId++, text: inputText };
+        setItems(prevItems => [...prevItems, newItem]);
     }
 
     const deleteItem =(id) => {
-        setItems(prevItems => {
-            const newItems = prevItems.filter((item, index) => index !== id)
-            return newItems
-    })}
+        setItems(items.filter(item => item.id !== id));
+            //return newItems
+    };
 
   return (
     <div className="card">
         <span className="title">To Do List</span>
         <InputBox click = {addItem}/>
         <div>
-                {items.map((item, index) => (
+                {items.map((item) => (
                 <ListItem
-                    key = {index}
-                    id = {index}
-                    text = {item}
+                    key = {item.id}
+                    id = {item.id}
+                    text = {item.text}
                     onChecked = {deleteItem}
                 />
             ))}
         </div>
-            
-        
-        
-
     </div>
 
   )
 }
-
-export default List;

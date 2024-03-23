@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css'
-import List from "./assets/components/List.jsx";
+import { List } from "./assets/components/List.jsx";
 
 function App() {
 

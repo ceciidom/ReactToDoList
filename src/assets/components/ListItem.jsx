@@ -4,7 +4,7 @@ function ListItem(props) {
     return (
       <div
         onClick={() => {
-          props.onChecked(props);
+          props.onChecked(props.id);
         }}
       >
         <label className="listItem">
