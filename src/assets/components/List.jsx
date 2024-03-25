@@ -1,7 +1,7 @@
 import "./List.css";
 import InputBox from "./InputBox";
 import ListItem from "./ListItem";
-import React, { useState } from "react";
+import { useState } from "react";
 
 
 let itemId = 0;

@@ -1,11 +1,5 @@
-/* .listItem {
-  text-align: left;
-  position: relative;
-  padding: 2rem;
-  font-size: 2rem;
-  color:  #FF71CD
-} */
-.listItem { 
+
+.listItem {
     display: block;
     position: relative;
     padding-left: 35px;

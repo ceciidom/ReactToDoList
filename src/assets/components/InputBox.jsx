@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 import { useState } from "react";
 import "./InputBox.css";
 
@@ -11,7 +11,7 @@ function InputBox(props) {
     }
 
     return (
-        <div className="inputBox"> 
+        <div className="inputBox">
             <input onChange={handleChange} type="text" value={inputText}/>
             <button onClick={() => {
                 props.click(inputText);
@@ -19,8 +19,12 @@ function InputBox(props) {
                 <span>Add</span>
             </button>
         </div>
-    )   
-    
+    )
+
 }
+
+InputBox.propTypes = {
+    click: PropTypes.func.isRequired,
+};
 
 export default InputBox;
